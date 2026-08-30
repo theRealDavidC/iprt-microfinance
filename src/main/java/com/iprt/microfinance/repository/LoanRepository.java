@@ -23,6 +23,10 @@ public class LoanRepository {
     public List<Loan> findAll() {
         return orm.findAll(Loan.class);
     }
+    
+   public void update(Loan loan) {
+    orm.update(loan);
+    } 
 
     public List<Loan> findActive() {
         return orm.find(Loan.class).where("status", "=", "ACTIVE").execute();
